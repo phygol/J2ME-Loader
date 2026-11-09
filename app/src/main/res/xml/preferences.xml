@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory android:title="显示设置">
+        <ListPreference
+            android:key="screen_orientation"
+            android:title="@string/pref_screen_orientation"
+            android:summary="@string/pref_screen_orientation_summary"
+            android:entries="@array/orientation_entries"
+            android:entryValues="@array/orientation_values"
+            android:defaultValue="auto"
+            android:dialogTitle="@string/pref_screen_orientation" />
+
+        <ListPreference
+            android:key="scaling_mode"
+            android:title="@string/pref_scaling_mode"
+            android:summary="@string/pref_scaling_mode_summary"
+            android:entries="@array/scaling_entries"
+            android:entryValues="@array/scaling_values"
+            android:defaultValue="fit"
+            android:dialogTitle="@string/pref_scaling_mode" />
+
+        <SwitchPreferenceCompat
+            android:key="show_gamepad"
+            android:title="@string/pref_show_gamepad"
+            android:summary="@string/pref_show_gamepad_summary"
+            android:defaultValue="true" />
+
+        <SwitchPreferenceCompat
+            android:key="keep_screen_on"
+            android:title="@string/pref_keep_screen_on"
+            android:summary="@string/pref_keep_screen_on_summary"
+            android:defaultValue="true" />
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="交互设置">
+        <SwitchPreferenceCompat
+            android:key="vibration_enabled"
+            android:title="@string/pref_vibration"
+            android:summary="@string/pref_vibration_summary"
+            android:defaultValue="true" />
+
+        <SwitchPreferenceCompat
+            android:key="sound_enabled"
+            android:title="@string/pref_sound_enabled"
+            android:summary="@string/pref_sound_enabled_summary"
+            android:defaultValue="true" />
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="关于">
+        <Preference
+            android:key="version_info"
+            android:title="版本"
+            android:summary="1.0.0" />
+        <Preference
+            android:key="github_link"
+            android:title="开源地址"
+            android:summary="https://github.com/nikita36078/J2ME-Loader" />
+    </PreferenceCategory>
+
+</PreferenceScreen>

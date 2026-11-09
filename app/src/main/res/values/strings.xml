@@ -1,0 +1,40 @@
+<resources>
+    <string name="app_name">J2ME Loader</string>
+    <string name="import_game">导入游戏</string>
+    <string name="settings">设置</string>
+    <string name="delete">删除</string>
+    <string name="rename">重命名</string>
+    <string name="details">详情</string>
+    <string name="confirm_delete">确定要删除吗？</string>
+    <string name="game_imported">已导入游戏</string>
+    <string name="import_failed">导入失败</string>
+    <string name="invalid_jar">无效的 JAR/JAD 文件</string>
+    <string name="storage_permission_needed">需要存储权限才能导入游戏文件</string>
+    <string name="grant_permission">授予权限</string>
+    
+    <!-- Settings -->
+    <string name="pref_screen_orientation">屏幕方向</string>
+    <string name="pref_screen_orientation_summary">游戏运行时的屏幕方向</string>
+    <string name="pref_scaling_mode">缩放模式</string>
+    <string name="pref_scaling_mode_summary">游戏画面如何适配屏幕</string>
+    <string name="pref_show_gamepad">显示虚拟按键</string>
+    <string name="pref_show_gamepad_summary">在游戏中显示虚拟方向键和功能键</string>
+    <string name="pref_keep_screen_on">保持屏幕常亮</string>
+    <string name="pref_keep_screen_on_summary">游戏运行时防止屏幕熄灭</string>
+    <string name="pref_vibration">震动反馈</string>
+    <string name="pref_vibration_summary">按键时提供触觉反馈</string>
+    <string name="pref_sound_enabled">音效</string>
+    <string name="pref_sound_enabled_summary">启用游戏音效</string>
+    
+    <!-- Orientation options -->
+    <string name="orientation_auto">自动 (跟随传感器)</string>
+    <string name="orientation_portrait">竖屏</string>
+    <string name="orientation_landscape">横屏</string>
+    <string name="orientation_reverse_landscape">反向横屏</string>
+    
+    <!-- Scaling options -->
+    <string name="scaling_fit">适应 (保持比例)</string>
+    <string name="scaling_fill">填充 (拉伸)</string>
+    <string name="scaling_stretch">拉伸 (全屏)</string>
+    <string name="scaling_pixel_perfect">像素完美 (整数倍)</string>
+</resources>

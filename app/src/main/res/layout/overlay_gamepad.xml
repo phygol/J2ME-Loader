@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <!-- 方向键上 -->
+        <ImageButton
+            android:id="@+id/btnUp"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/btn_gamepad"
+            android:contentDescription="上"
+            android:src="@drawable/ic_dpad_up" />
+
+        <!-- 方向键左右 -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <ImageButton
+                android:id="@+id/btnLeft"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:layout_marginEnd="8dp"
+                android:background="@drawable/btn_gamepad"
+                android:contentDescription="左"
+                android:src="@drawable/ic_dpad_left" />
+
+            <ImageButton
+                android:id="@+id/btnCenter"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:layout_marginHorizontal="8dp"
+                android:background="@drawable/btn_gamepad_action"
+                android:contentDescription="确定"
+                android:src="@drawable/ic_action_ok" />
+
+            <ImageButton
+                android:id="@+id/btnRight"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:layout_marginStart="8dp"
+                android:background="@drawable/btn_gamepad"
+                android:contentDescription="右"
+                android:src="@drawable/ic_dpad_right" />
+
+        </LinearLayout>
+
+        <!-- 方向键下 -->
+        <ImageButton
+            android:id="@+id/btnDown"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/btn_gamepad"
+            android:contentDescription="下"
+            android:src="@drawable/ic_dpad_down" />
+
+    </LinearLayout>
+
+    <!-- 功能键 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/btnSoftLeft"
+            android:layout_width="80dp"
+            android:layout_height="48dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/btn_gamepad"
+            android:contentDescription="左功能键"
+            android:text="菜单"
+            android:textColor="@android:color/white" />
+
+        <ImageButton
+            android:id="@+id/btnSoftRight"
+            android:layout_width="80dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="16dp"
+            android:background="@drawable/btn_gamepad"
+            android:contentDescription="右功能键"
+            android:text="返回"
+            android:textColor="@android:color/white" />
+
+    </LinearLayout>
+
+</LinearLayout>
