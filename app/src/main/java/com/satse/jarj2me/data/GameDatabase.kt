@@ -32,7 +32,7 @@ interface GameDao {
     suspend fun delete(game: GameEntity)
 
     @Query("SELECT * FROM games ORDER BY lastPlayed DESC")
-    fun getAllGames(): androidx.paging.PagingSource<Int, GameEntity>
+    suspend fun getAllGames(): List<GameEntity>
 
     @Query("SELECT * FROM games WHERE filePath = :path")
     suspend fun findByPath(path: String): GameEntity?
