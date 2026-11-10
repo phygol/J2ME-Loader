@@ -36,24 +36,6 @@ jobs:
       - name: Accept Android licenses
         run: yes | sdkmanager --licenses
 
-      - name: Set up Gradle
-        uses: gradle/gradle-build-action@v2
-        with:
-          gradle-version: 8.5
-
-      - name: Generate Gradle Wrapper
-        run: gradle wrapper --gradle-version 8.5 --distribution-type bin
-
-      - name: Cache Gradle dependencies
-        uses: actions/cache@v4
-        with:
-          path: |
-            ~/.gradle/caches
-            ~/.gradle/wrapper
-          key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*', '**/gradle.properties') }}
-          restore-keys: |
-            ${{ runner.os }}-gradle-
-
       - name: Build ARM64 Release APK
         run: ./gradlew :app:assembleRelease --no-daemon -Pandroid.abiFilters=arm64-v8a
 

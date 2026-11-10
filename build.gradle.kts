@@ -14,14 +14,6 @@ plugins {
     id("org.jetbrains.kotlin.android") version "1.9.20" apply false
 }
 
-allprojects {
-    repositories {
-        maven { url = uri("https://maven.aliyun.com/repository/google") }
-        maven { url = uri("https://maven.aliyun.com/repository/public") }
-        mavenCentral()
-    }
-}
-
 tasks.register("clean", Delete::class) {
     delete(rootProject.buildDir)
 }
