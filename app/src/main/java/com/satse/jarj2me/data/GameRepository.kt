@@ -2,9 +2,7 @@ package com.satse.jarj2me.data
 
 import android.app.Application
 import androidx.lifecycle.LiveData
-import androidx.paging.Pager
-import androidx.paging.PagingConfig
-import androidx.paging.PagingSource
+import androidx.lifecycle.map
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 
@@ -20,10 +18,8 @@ class GameRepository(private val gameDao: GameDao) {
 
     suspend fun findByPath(path: String) = gameDao.findByPath(path)
 
-    fun getAllGames(): LiveData<androidx.paging.PagingData<GameEntity>> {
-        return Pager(PagingConfig(pageSize = 20)) {
-            gameDao.getAllGames()
-        }.liveData
+    fun getAllGames(): LiveData<List<GameEntity>> {
+        return gameDao.getAllGames().map { it }
     }
 
     suspend fun getRecentGames(limit: Int = 10) = gameDao.getRecentGames(limit)

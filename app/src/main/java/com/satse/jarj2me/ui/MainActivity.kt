@@ -56,8 +56,8 @@ class MainActivity : AppCompatActivity() {
 
     private fun observeGames() {
         lifecycleScope.launch {
-            repository.getAllGames().collectLatest { pagingData ->
-                adapter.submitData(pagingData)
+            repository.getAllGames().observe(this@MainActivity) { games ->
+                adapter.submitList(games)
             }
         }
     }
