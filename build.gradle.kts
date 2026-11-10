@@ -6,14 +6,12 @@ buildscript {
     dependencies {
         classpath("com.android.tools.build:gradle:8.10.0")
         classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:2.1.0")
-        classpath("com.google.devtools.ksp:com.google.devtools.ksp.gradle.plugin:2.1.0-2.0.0")
     }
 }
 
 plugins {
     id("com.android.application") version "8.10.0" apply false
     id("org.jetbrains.kotlin.android") version "2.1.0" apply false
-    id("com.google.devtools.ksp") version "2.1.0-2.0.0" apply false
 }
 
 tasks.register("clean", Delete::class) {
