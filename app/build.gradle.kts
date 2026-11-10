@@ -1,8 +1,7 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
-    id("kotlin-android")
-    id("kotlin-kapt")
+    id("com.google.devtools.ksp") version "2.1.0-2.0.0"
 }
 
 android {
@@ -19,6 +18,15 @@ android {
         
         ndk {
             abiFilters += listOf("arm64-v8a")
+        }
+    }
+
+    signingConfigs {
+        create("debug") {
+            storeFile = file("debug.keystore")
+            storePassword = "android"
+            keyAlias = "androiddebugkey"
+            keyPassword = "android"
         }
     }
 
@@ -46,22 +54,17 @@ android {
 
     kotlinOptions {
         jvmTarget = "17"
-        freeCompilerArgs += listOf("-Xallow-kapt-language-version-2.0")
     }
 
     buildFeatures {
         viewBinding = true
+        buildConfig = true
     }
 
     packagingOptions {
         resources {
             excludes += "/META-INF/*.kotlin_module"
         }
-    }
-
-    kapt {
-        useBuildCache = true
-        correctErrorTypes = true
     }
 }
 
@@ -82,10 +85,10 @@ dependencies {
     // 文件选择
     implementation("androidx.activity:activity:1.8.2")
     
-    // Room 数据库（游戏存档/配置）
-    implementation("androidx.room:room-runtime:2.6.1")
-    implementation("androidx.room:room-ktx:2.6.1")
-    kapt("androidx.room:room-compiler:2.6.1")
+    // Room 数据库（游戏存档/配置）- 使用 KSP
+    implementation("androidx.room:room-runtime:2.6.3")
+    implementation("androidx.room:room-ktx:2.6.3")
+    ksp("androidx.room:room-compiler:2.6.3")
     
     // 测试
     testImplementation("junit:junit:4.13.2")
