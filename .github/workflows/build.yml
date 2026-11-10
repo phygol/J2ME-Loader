@@ -36,6 +36,9 @@ jobs:
       - name: Accept Android licenses
         run: yes | sdkmanager --licenses
 
+      - name: Generate Gradle Wrapper
+        run: gradle wrapper --gradle-version 8.5 --distribution-type bin
+
       - name: Make gradlew executable
         run: chmod +x ./gradlew
 
