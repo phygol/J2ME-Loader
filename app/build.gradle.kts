@@ -46,6 +46,7 @@ android {
 
     kotlinOptions {
         jvmTarget = "17"
+        freeCompilerArgs += listOf("-Xallow-kapt-language-version-2.0")
     }
 
     buildFeatures {
@@ -56,6 +57,11 @@ android {
         resources {
             excludes += "/META-INF/*.kotlin_module"
         }
+    }
+
+    kapt {
+        useBuildCache = true
+        correctErrorTypes = true
     }
 }
 
